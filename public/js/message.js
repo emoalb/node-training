@@ -1,7 +1,6 @@
 $(() => (
     setTimeout(function () {
-        $('#message').fadeOut(()=>this.remove());
+        $('#message').fadeOut();
     }, 3000)
-
 ));
 

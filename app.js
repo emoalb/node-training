@@ -1,9 +1,11 @@
+
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const handlebars = require('express-handlebars');
 const expressSession = require('express-session');
-
+const passport  = require('passport');
 const authRoutes = require('./routes/auth');
 const homeRoutes = require('./routes/main')
 
@@ -27,6 +29,8 @@ app.use(expressSession({
     resave: false,
     saveUninitialized: true
 }));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(rootFolder, 'public')));
 app.use(express.static(path.join(rootFolder, 'node_modules/jquery')));
