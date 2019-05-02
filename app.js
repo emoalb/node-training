@@ -8,7 +8,7 @@ const authRoutes = require('./routes/auth');
 const homeRoutes = require('./routes/main')
 
 const app = express();
-const title = "node.js training session";
+const title = "Node.js training session";
 const rootFolder = path.normalize(__dirname);
 app.set('views', path.join(rootFolder, 'views'));
 app.set('view engine', 'hbs');
