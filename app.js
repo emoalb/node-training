@@ -30,6 +30,7 @@ app.use(expressSession({
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(rootFolder, 'public')));
 app.use(express.static(path.join(rootFolder, 'node_modules/jquery')));
+app.use(express.static(path.join(rootFolder, 'node_modules/normalize.css')));
 app.use('/auth', authRoutes);
 app.use('/', homeRoutes);
 module.exports = app;
