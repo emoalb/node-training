@@ -6,12 +6,26 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='stylesheet' href='/css/navbar.css'/>
+    <link rel='stylesheet' href='/css/message.css'/>
+    <script src="/dist/jquery.js"></script>
+    <script src="/js/message.js"></script>
     <title>{{title}}</title>
 </head>
 <body>
 <header>
     <h1>{{title}}</h1>
     {{> navbar}}
+    {{#if messages}}
+        <ul id="message">
+            {{#each messages}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <div>
+            <br/>
+        </div>
+    {{/if}}
 </header>
 
 {{{body}}}

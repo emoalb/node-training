@@ -1,9 +1,9 @@
 
 const register = {
     get: (req, res) => {
-        let message = req.session.message;
-        req.session.message='';
-        return res.render('register',{message:message});
+        let messages = req.session.messages;
+        req.session.messages=[];
+        return res.render('register',{messages:messages});
     },
     post: (req, res) => {
         const username = req.body.username;
