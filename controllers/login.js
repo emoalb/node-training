@@ -1,6 +1,8 @@
 const login = {
     get: (req, res) => {
-        return res.render('login');
+        let messages = req.session.messages;
+        req.session.messages = [];
+        return res.render('login', {messages:messages});
     }
 };
 module.exports = login;
